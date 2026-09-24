@@ -94,5 +94,21 @@
         "imagen": "img/productos/aros.jpg",
         "descripcion": "Aros delicados y versátiles, ideales para agregar un detalle sutil y elegante al look.",
         "categoria": "Joyeria"
+    },
+     {
+        "id": 13,
+        "nombre": "Velas",
+        "precio": 5000,
+        "imagen": "img/productos/cartera.jpg",
+        "descripcion": "Velas aromaticas de diversos aromas frutales. Llena tu hogar con el mas dulce olor frutal.",
+        "categoria": "Joyeria"
+    },
+    {
+        "id": 14,
+        "nombre": "Cortinas",
+        "precio": 10000,
+        "imagen": "img/productos/aros.jpg",
+        "descripcion": "Cortinas con tela gruesa, ideal para siestas en la tarde, cuando el sol cae.",
+        "categoria": "Joyeria"
     }
 ]
