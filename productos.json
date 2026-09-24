@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "nombre": "Blusa Satinada",
+        "precio": 15000,
+        "imagen": "img/productos/blusa_satinada.jpg",
+        "descripcion": "Blusa satinada de textura suave y acabado elegante, ideal para crear looks delicados.",
+        "categoria": "Ropa"
+    },
+    {
+        "id": 2,
+        "nombre": "Remera Básica",
+        "precio": 18000,
+        "imagen": "img/productos/remera_basica.jpg",
+        "descripcion": "Remera básica y versátil, perfecta para combinar con diferentes estilos y prendas.",
+        "categoria": "Ropa"
+    },
+    {
+        "id": 3,
+        "nombre": "Falda Plisada",
+        "precio": 22000,
+        "imagen": "img/productos/falda_plisada.jpg",
+        "descripcion": "Falda plisada de estilo femenino y cómodo, ideal para looks casuales o elegantes.",
+        "categoria": "Ropa"
+    },
+    {
+        "id": 4,
+        "nombre": "Máscara de Pestañas",
+        "precio": 12500,
+        "imagen": "img/productos/mascara_de_pestanas.jpg",
+        "descripcion": "Máscara de pestañas que ayuda a definir y realzar la mirada con un acabado intenso.",
+        "categoria": "Maquillaje"
+    },
+    {
+        "id": 5,
+        "nombre": "Rubor Rosado",
+        "precio": 19500,
+        "imagen": "img/productos/rubor.jpg",
+        "descripcion": "Rubor de tono rosado que aporta un toque de color natural y luminoso al rostro.",
+        "categoria": "Maquillaje"
+    },
+    {
+        "id": 6,
+        "nombre": "Gloss Labial",
+        "precio": 25000,
+        "imagen": "img/productos/gloss_labial.jpg",
+        "descripcion": "Gloss labial de acabado brillante que aporta luminosidad y un toque delicado a los labios.",
+        "categoria": "Maquillaje"
+    },
+    {
+        "id": 7,
+        "nombre": "Crema Corporal",
+        "precio": 25000,
+        "imagen": "img/productos/crema_corporal.jpg",
+        "descripcion": "Crema corporal hidratante que ayuda a mantener la piel suave, nutrida y agradable al tacto.",
+        "categoria": "Cuidados"
+    },
+    {
+        "id": 8,
+        "nombre": "Body Splash",
+        "precio": 25000,
+        "imagen": "img/productos/body_splash.jpg",
+        "descripcion": "Body splash de fragancia suave y fresca, perfecto para acompañarte durante el día.",
+        "categoria": "Cuidados"
+    },
+    {
+        "id": 9,
+        "nombre": "Bálsamo Labial",
+        "precio": 25000,
+        "imagen": "img/productos/balsamo_labial.jpg",
+        "descripcion": "Bálsamo labial hidratante que ayuda a mantener los labios suaves y protegidos.",
+        "categoria": "Cuidados"
+    },
+    {
+        "id": 10,
+        "nombre": "Collar Luna",
+        "precio": 25000,
+        "imagen": "img/productos/collar_luna.jpg",
+        "descripcion": "Collar delicado inspirado en la luna, pensado para complementar looks elegantes y sutiles.",
+        "categoria": "Joyeria"
+    },
+    {
+        "id": 11,
+        "nombre": "Cartera",
+        "precio": 25000,
+        "imagen": "img/productos/cartera.jpg",
+        "descripcion": "Cartera versátil y elegante, ideal para complementar diferentes estilos y ocasiones.",
+        "categoria": "Joyeria"
+    },
+    {
+        "id": 12,
+        "nombre": "Aros",
+        "precio": 25000,
+        "imagen": "img/productos/aros.jpg",
+        "descripcion": "Aros delicados y versátiles, ideales para agregar un detalle sutil y elegante al look.",
+        "categoria": "Joyeria"
+    }
+]

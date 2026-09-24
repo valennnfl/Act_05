@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    --color-principal: #f7a0b8;
+    --color-secundario: #fae9d7;
+    --color-acento: #fbb6c4;
+    --color-fondo: #faf5ec;
+    --color-blanco: #ffffff;
+
+    --color-texto: #40383a;
+    --color-texto-suave: #756b6d;
+
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-texto: 'Quicksand', sans-serif;
+
+    --titulo-principal: 3rem;
+    --titulo-seccion: 2.2rem;
+    --subtitulo: 1.4rem;
+    --texto: 1rem;
+
+    --radio: 12px;
+    --transicion: 0.3s ease;
+
+    --sombra: 0 5px 18px rgba(80, 50, 55, 0.08);
+    --sombra-hover: 0 10px 25px rgba(80, 50, 55, 0.14);
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+
+    font-family: var(--fuente-texto);
+    font-size: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    background-color: var(--color-principal);
+}
+/* ========================================
+   NAVBAR (Estilo Centrado Simétrico)
+======================================== */
+.navbar {
+    background-color: var(--color-principal);
+}
+
+.nav-contenedor {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* 3 columnas: izquierda, logo al centro, derecha */
+    align-items: center;
+    padding: 10px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 👈 Columna Izquierda: Empuja el texto "Inicio" bien pegado al logo */
+.nav-izquierda {
+    justify-self: end;       /* Lo alinea contra el borde derecho de su columna (pegado al logo) */
+    padding-right: 35px;     /* El espacio exacto de separación con el logo */
+}
+
+/* 👉 Columna Derecha: Empuja "Productos" y "Carrito" bien pegados al logo */
+.nav-derecha {
+    justify-self: start;     /* Lo alinea contra el borde izquierdo de su columna (pegado al logo) */
+    padding-left: 35px;      /* El espacio exacto de separación con el logo */
+    display: flex;
+    flex-direction: row;     /* Forzados en la misma línea */
+    align-items: center;
+    gap: 24px;               /* Separación entre Productos y Carrito */
+}
+
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 55px;
+    height: auto;
+}
+
+
+/* ========================================
+   BUSCADOR + FILTRO
+======================================== */
+.productos {
+    max-width: 1200px; 
+    margin: 0 auto;  
+    padding: 20px 10px; 
+}
+
+
+.barra-herramientas {
+    display: inline-flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: var(--color-acento);      /* El rosa de tu paleta */
+    padding: 12px 50px;
+    border-radius: 30px; 
+    margin-bottom: 30px;
+    gap: 100px;
+    flex-wrap: wrap;                
+}
+
+/* Esto hace que todo lo que esté adentro de la sección de productos (como la barra rosa) se alinee al centro */
+.productos h2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+} 
+
+.productos .barra-herramientas {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Contenedor de los botones */
+.grupo-filtros {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo individual para cada botón de categoría */
+.btn-filtro {
+    background-color: transparent;
+    color: #4A3E3D;
+    border: none;
+    padding: 6px 16px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover simple */
+.btn-filtro:hover {
+    background-color: var(--color-principal);
+}
+
+/* 💡 Clase automática de Vue para resaltar el botón seleccionado */
+.btn-filtro.activo {
+    background-color: #fff;      
+    color: #FF8DA1;               
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Contenedor del buscador a la derecha */
+.grupo-buscador {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* El input de texto estilizado */
+.input-busqueda {
+    background-color: #fff;
+    border: none;
+    padding: 8px 16px;
+    padding-right: 40px; /* Espacio para que el texto no pise el icono */
+    border-radius: 20px;
+    font-size: 0.9rem;
+    width: 240px;
+    outline: none;
+    color: #4A3E3D;
+}
+
+/* Icono de lupa dentro del buscador */
+.icono-buscar {
+    position: absolute;
+    right: 14px;
+    color: #FF8DA1;
+    font-size: 1rem;
+    pointer-events: none; /* Hace que si clickean la lupa, el input igual reciba el foco */
+}
+
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+/* El contenedor de las tarjetas */
+
+.contenedor-productos {
+    display: grid;
+    /* Usa un minmax inteligente: si no entran 280px, que se adapte al 100% del espacio disponible */
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: 20px;
+    padding: 15px;
+    background-color: #FAF6F0; 
+    box-sizing: border-box;
+}
+
+/* La imagen dentro de la tarjeta */
+.img-producto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block; 
+}
+.card-individual {
+    background-color: var(--color-acento); 
+    border-radius: 16px;       
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    
+
+    width: 100%;             
+    min-width: 0;          
+    box-sizing: border-box; 
+}
+
+.card-individual:hover {
+    transform: translateY(-4px); /* Animación sutil al pasar el mouse */
+}
+
+/* Pequeña etiqueta de categoría arriba */
+.categoria-etiqueta {
+    align-self: flex-start;
+    background-color: var(--color-acento); 
+    color: var(--color-blanco);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    /*Categoria encima de la imagen*/
+    position: absolute; 
+    top: 12px;          /* Separación desde el borde superior de la foto */
+    left: 12px;         /* Separación desde el borde izquierdo de la foto */
+    z-index: 10; 
+}
+
+/* Contenedor e Imagen */
+.contenedor-img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+/* Textos de la tarjeta */
+.info-producto {
+    flex-grow: 1; /* Empuja el botón siempre hacia abajo */
+    margin-bottom: 16px;
+}
+
+.titulo-producto {
+    font-size: 1.1rem;
+    color: var(--color-texto);
+    margin: 5px 0;
+}
+
+.descripcion-producto {
+    font-size: 0.85rem;
+    color: var(--color-texto);
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.precio-producto {
+    font-size: 1.3rem;
+    color: var(--color-texto);
+    font-weight: bold;
+    margin: 8px 0 0 0;
+}
+
+.btn-agregar {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-agregar:hover {
+    background-color: var(--color-acento);
+}
+
+.contenedor-img {
+    position: relative; 
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+.img-producto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    min-height: 250px;
+
+    padding: 50px 30px 20px;
+
+    background-color: var(--color-principal);
+
+    color: var(--color-blanco);
+}
+
+footer img {
+    width: 100px;
+
+    margin-bottom: 30px;
+}
+
+footer hr {
+    border: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    text-align: center;
+
+    font-size: 0.8rem;
+}
+
+/* ========================================
+  MODAL DE CARRITO
+======================================== */
+/* ==========================================
+   🌸 SECCIÓN: MODAL Y CARRITO DE LUNÉ 
+   ========================================== */
+
+/* 📦 Caja contenedora del Modal (Cuadrado y Redondeado) */
+.modal-carrito-lune {
+    background-color: #FAF6F0; /* Fondo crema suave */
+    border-radius: 24px;       /* Bordes muy redondeados */
+    border: none;
+    box-shadow: 0 15px 35px rgba(255, 141, 161, 0.15); /* Sombra rosa sutil */
+    padding: 12px;
+}
+
+.modal-carrito-lune .modal-title {
+    color: #4A3E3D;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Botón "X" de cerrar personalizado */
+.modal-carrito-lune .btn-close {
+    background-color: #FFC0CB;
+    border-radius: 50%;
+    opacity: 0.8;
+    padding: 8px;
+    font-size: 0.8rem;
+}
+
+/* Scroll interno si hay muchos productos */
+.contenedor-items-carrito {
+    max-height: 400px; 
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* 🎨 Tarjeta individual de cada producto DENTRO del carrito */
+.item-carrito-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid rgba(255, 192, 203, 0.4); /* Borde rosa suave */
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 12px;
+    gap: 14px;
+    transition: transform 0.2s ease;
+}
+
+.item-carrito-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Miniatura de la foto del producto */
+.item-carrito-img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #eee;
+}
+
+/* Textos informativos del producto */
+.item-carrito-info {
+    flex-grow: 1;
+}
+
+.item-carrito-info h4 {
+    font-size: 1rem;
+    margin: 0 0 4px 0;
+    color: #4A3E3D;
+    font-weight: 600;
+}
+
+.item-carrito-info p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #FF8DA1; /* Precio rosa */
+    font-weight: 700;
+}
+
+/* Botón de eliminar (Tachito / Menos) */
+.btn-eliminar-item {
+    background-color: #FFF0F2;
+    border: none;
+    color: #FF8DA1;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-eliminar-item:hover {
+    background-color: #FF8DA1;
+    color: white;
+}
+
+/* 🧾 Pie del Carrito: Total y Botones de acción */
+.carrito-footer-lune {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed rgba(255, 141, 161, 0.3); /* Línea discontinua estética */
+}
+
+.carrito-total-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.carrito-total-contenedor span {
+    font-size: 1.1rem;
+    color: #706261;
+    font-weight: 600;
+}
+
+.carrito-total-precio {
+    font-size: 1.5rem;
+    color: #4A3E3D;
+    font-weight: 800;
+}
+
+/* Grupo de botones de abajo */
+.carrito-botones-grupo {
+    display: flex;
+    gap: 12px;
+}
+
+/* Botón Vaciar */
+.btn-vaciar-carrito {
+    background-color: transparent;
+    color: #706261;
+    border: 2px solid #E2DCD5;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+.btn-vaciar-carrito:hover {
+    background-color: #E2DCD5;
+    color: #4A3E3D;
+}
+
+/* Botón Finalizar Compra */
+.btn-comprar-carrito {
+    background-color: #FF8DA1; /* Rosa fuerte */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 2;
+    box-shadow: 0 4px 12px rgba(255, 141, 161, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-comprar-carrito:hover {
+    background-color: #E07387;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(255, 141, 161, 0.4);
+}
+
+/* Mensaje estético de Carrito Vacío */
+.carrito-vacio-mensaje {
+    text-align: center;
+    padding: 30px 10px;
+    color: #706261;
+}
+
+.carrito-vacio-mensaje i {
+    font-size: 2.5rem;
+    color: #FFC0CB;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/*Footer*/
+.footer-lune {
+    margin-top: 4rem;
+    padding: 3rem 0 1rem;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+.footer-logo {
+    width: 150px;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    margin: 0;
+    max-width: 300px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-lune h5 {
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #4f4650;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #9b7fa3;
+}
+
+.footer-lune hr {
+    margin: 2rem 0 1rem;
+    border: 0;
+    border-top: 1px solid rgba(79, 70, 80, 0.15);
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    .footer-lune {
+        padding: 2.5rem 1rem 1rem;
+    }
+
+    .footer-text {
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-isologo {
+        width: 60px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-lune {
+        gap: 30px;
+    }
+
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .nav-contenedor {
+        padding: 10px 15px;
+    }
+
+    .nav-izquierda {
+        padding-right: 10px;
+    }
+
+    .nav-derecha {
+        padding-left: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        width: 48px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 350px;
+
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+
+    /* Sobre Luné */
+
+    .sobre-lune {
+        grid-template-columns: 1fr;
+
+        padding: 60px 25px;
+
+        gap: 30px;
+    }
+
+    .sobre-lune img {
+        height: 250px;
+    }
+
+
+    /* Productos */
+
+    .productos {
+        grid-template-columns: 1fr;
+
+        padding: 50px 20px 80px;
+    }
+
+    .controles-productos {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    #busqueda {
+        width: 100%;
+    }
+
+    #categoria {
+        width: 100%;
+    }
+
+
+    /* Cards */
+
+    producto-card > div {
+        padding: 12px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    /* 1. NAVBAR RESPONSIVE */
+    .nav-contenedor {
+        display: flex;
+        flex-direction: column; 
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+
+    .nav-izquierda {
+        justify-self: center;
+        padding-right: 0;
+        order: 2; /* Lo posiciona debajo del logo */
+    }
+
+  
+    .navbar-brand {
+        order: 1; 
+    }
+
+  
+    .nav-derecha {
+        justify-self: center;
+        padding-left: 0;
+        order: 3; /* Queda abajo de Inicio */
+        gap: 20px;
+    }
+
+
+  /* BARRA DE HERRAMIENTAS RESPONSIVE (Filtros + Buscador) */
+    .barra-herramientas {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px;  
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .grupo-buscador {
+        width: 100%;
+    }
+
+    .input-busqueda {
+        width: 100%; 
+    }
+
+
+    .grupo-filtros {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        justify-content: flex-start;
+
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .grupo-filtros::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .btn-filtro {
+        flex-shrink: 0; 
+        padding: 6px 14px;
+        font-size: 0.9rem;
+    }
+}
