@@ -63,7 +63,7 @@
                 
                 <div class="grupo-filtros">
                     <button 
-                        v-for="cat in ['Todas', 'Ropa', 'Maquillaje', 'Cuidados', 'Joyeria']" 
+                        v-for="cat in ['Todas', 'Ropa', 'Maquillaje', 'Cuidados', 'Joyeria', 'Cuidados del Hogar']" 
                         :key="cat"
                         @click="categoriaSeleccionada = cat"
                         :class="['btn-filtro', { 'activo': categoriaSeleccionada === cat }]"
