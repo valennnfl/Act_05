@@ -6,7 +6,7 @@
 ======================================== */
 
 :root {
-    --color-principal: #f7a0b8;
+    --color-principal: hsl(261, 75%, 70%);
     --color-secundario: #fae9d7;
     --color-acento: #fbb6c4;
     --color-fondo: #faf5ec;
