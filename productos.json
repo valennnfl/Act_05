@@ -99,16 +99,16 @@
         "id": 13,
         "nombre": "Velas",
         "precio": 5000,
-        "imagen": "img/productos/cartera.jpg",
+        "imagen": "img/productos/velas.jpg",
         "descripcion": "Velas aromaticas de diversos aromas frutales. Llena tu hogar con el mas dulce olor frutal.",
-        "categoria": "Joyeria"
+        "categoria": "Cuidados del Hogar"
     },
     {
         "id": 14,
         "nombre": "Cortinas",
         "precio": 10000,
-        "imagen": "img/productos/aros.jpg",
+        "imagen": "img/productos/cortina.jpg",
         "descripcion": "Cortinas con tela gruesa, ideal para siestas en la tarde, cuando el sol cae.",
-        "categoria": "Joyeria"
+        "categoria": "Cuidados del Hogar"
     }
 ]
